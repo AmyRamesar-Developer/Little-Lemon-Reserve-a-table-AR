@@ -1,16 +1,20 @@
-import './App.css';
+import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
-import Nav from './Nav.js';
 import Footer from './Footer.js'
+import Header from './Header.js'
 import Hero from "./Hero.js"
+import SpecialSection from "./SpecialSection.js"
 
 function App() {
   return (
-    <div>
-      <Nav />
+    <ChakraProvider>
+      <main>
+      <Header />
       <Hero />
+      <SpecialSection />
       <Footer />
-    </div>
+    </main>
+    </ChakraProvider>
   );
 }
 
