@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css'
 
 const Hero = () => {
     const title= "Little Lemon";
@@ -6,7 +7,7 @@ const Hero = () => {
     const paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum egestas dolor hsyu iu.";
 
     return (
-        <section>
+        <section className="hero-item">
             <article>
                 <h1>{title}</h1>
                 <h2>{subTitle}</h2>

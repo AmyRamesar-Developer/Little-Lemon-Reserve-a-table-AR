@@ -1,4 +1,5 @@
 import React from "react";
+import './App.css'
 
 const navigation = [
     {
@@ -30,12 +31,12 @@ const navigation = [
 
 const Header = () => {
     return (
-        <header>
+        <header className="header-item">
             <img src="./Logo.svg" alt="Little Lemon Logo" required></img>
-            <nav classname="navbar">
-            <ul>
+            <nav classname="nav-bar">
+            <ul className="nav-list">
                 {navigation.map((nav) =>(
-                    <li>
+                    <li className="nav-listitem">
                         <a href={nav.url}>{nav.page}</a>
                     </li>
                 ))

@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
     return (
-        <section>
+        <section className="footer-item">
            <article>
                 <h2>Image Insert</h2>
            </article>
