@@ -1,8 +1,10 @@
 import React from "react";
-import Footer from './Footer.js'
 import Header from './Header.js'
 import Hero from "./Hero.js"
 import SpecialSection from "./SpecialSection.js"
+import Testimonals from "./Testimonals.js"
+import About from "./About.js"
+import Footer from './Footer.js'
 import './App.css'
 
 function App() {
@@ -11,6 +13,8 @@ function App() {
       <Header />
       <Hero />
       <SpecialSection />
+      <Testimonals />
+      <About />
       <Footer />
     </main>
   );

@@ -1,12 +1,13 @@
 import React from "react";
+import './App.css';
 
 const Special = ({title, cost, description, img}) => {
 
     return(
-            <article>
-                <img src="img" alt="${title} Image"/>
-                <h3>{title}</h3>
-                <h3>{cost}</h3>
+            <article className="special-card">
+                <img src="img" alt={title}/>
+                <h3 className="title">{title}</h3>
+                <h3 className="cost">{cost}</h3>
                 <p>{description}</p>
             </article>
     )

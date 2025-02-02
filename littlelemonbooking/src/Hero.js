@@ -12,8 +12,8 @@ const Hero = () => {
                 <h1>{title}</h1>
                 <h2>{subTitle}</h2>
                 <p>{paragraph}</p>
-                <img src="../chefb.jpg" alt="A chef preparing a meal" width="50px" height="50px"></img>
             </article>
+            <img src="../chefb.jpg" alt="A chef preparing a meal" width="200px" height="250px"></img>
         </section>
     )
 }
