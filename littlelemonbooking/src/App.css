@@ -99,7 +99,7 @@
   grid-column: span 12;
   display: flex;
   flex-wrap: wrap;
-  padding-top: 20px;
+  padding-top: 3rem;
 }
 
 .specials-section h2{
@@ -158,7 +158,7 @@
   grid-column: span 12;
   display: flex;
   flex-wrap: wrap;
-  padding-top: 20px;
+  padding-top: 3rem;
 }
 
 .testimonals h2 {
@@ -216,6 +216,7 @@
   grid-column: span 12;
   display: flex;
   flex-wrap: wrap;
+  padding-top: 3rem;
 }
 
 .about h1 {
@@ -238,4 +239,5 @@
   grid-column: span 12;
   display: flex;
   gap: 50px;
+  padding-top: 3rem;
 }
