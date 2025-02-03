@@ -4,7 +4,7 @@ import './App.css'
 const Hero = () => {
     const title= "Little Lemon";
     const subTitle="Chicago";
-    const paragraph = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus condimentum egestas dolor hsyu iu.";
+    const paragraph = "We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.";
 
     return (
         <section className="hero-item">

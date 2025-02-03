@@ -4,11 +4,11 @@ import './App.css';
 const Testimonal = ({rating, name, img, comment}) => {
 
     return(
-        <article>
-            <h3>{rating}</h3>
-            <img src={img}></img>
-            <h3>{name}</h3>
-            <p>{comment}</p>
+        <article className="testimonal-card">
+            <h3 className="rating">{rating} stars</h3>
+            <img src={img} alt="User" className="reviewerImg"></img>
+            <h3 className="reviewer">{name}</h3>
+            <p className="review">{comment}</p>
         </article>
     )
 }

@@ -21,8 +21,8 @@ const testimonals = [
 const Testimonals = () => {
 
     return (
-        <section>
-            <h2>Testiomals</h2>
+        <section className="testimonals">
+            <h2>Testimonals</h2>
             {testimonals.map((testimony) => (
                 <Testimonal
                     rating={testimony.rating}
