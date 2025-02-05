@@ -241,3 +241,9 @@
   gap: 50px;
   padding-top: 3rem;
 }
+
+Form {
+  display: grid;
+  grid-column: span 4;
+  justify-content: center;
+}

@@ -1,14 +1,22 @@
 import React from "react";
 import {Formik, Field, Form, ErrorMessage} from "formik";
 import * as Yup from "yup";
+import AvaiableTimes from "./AvailableTimes";
+import "./App.css"
 
 const BookingForm = () => {
+
+    const times = AvaiableTimes();
+
     return (
         <Formik
           initialValues={{
             firstName: "",
             lastName: "",
             numberOfGuests: "",
+            date: "",
+            time: "",
+            contactNumber: "",
             email: "",
           }}
 
@@ -58,6 +66,72 @@ const BookingForm = () => {
                       placeholder="Number of Guests"
                     />
                     <ErrorMessage name="Number of Guests">
+                        {(msg) => <div className="error">{msg}</div>}
+                    </ErrorMessage>
+                </div>
+                <div>
+                    <label htmlFor="date">Date</label>
+                    <Field
+                      id="date"
+                      name="date"
+                      type="date"
+                      placeholder="Date"
+                    />
+                   {/* <ErrorMessage name="date">
+                        {(msg) => <div className="error">{msg}</div>}
+                    </ErrorMessage> */}
+                </div>
+                <div>
+                    <label htmlFor="time">Time</label>
+                    <Field
+                      as="select"
+                      id="time"
+                      name="time"
+                    >
+                    <option>Select a time</option>
+                    {times.map((time) => (
+                        <option>{time}</option>
+                    ))}
+
+                    </Field>
+                    <ErrorMessage name="time">
+                        {(msg) => <div className="error">{msg}</div>}
+                    </ErrorMessage>
+                </div>
+                <div>
+                    <label htmlFor="occassion">Occassion</label>
+                    <Field
+                      as="select"
+                      id="occassion"
+                      name="occassion"
+                    >
+                    <option>Select an occassion</option>
+                    <option>Birthday</option>
+                    <option>Anniversary</option>
+
+                    </Field>
+                    <ErrorMessage name="time">
+                        {(msg) => <div className="error">{msg}</div>}
+                    </ErrorMessage>
+                </div>
+                <div>
+                    <label htmlFor="notes">Notes or special requests</label>
+                    <Field
+                      id="notes"
+                      name="notes"
+                      type="text"
+                      placeholder=""
+                    />
+                </div>
+                <div>
+                    <label htmlFor="contactNumber">Contact Number</label>
+                    <Field
+                      id="contactNumber"
+                      name="contactNumber"
+                      type="number"
+                      placeholder="Contact Number"
+                    />
+                    <ErrorMessage name="contactNumber">
                         {(msg) => <div className="error">{msg}</div>}
                     </ErrorMessage>
                 </div>

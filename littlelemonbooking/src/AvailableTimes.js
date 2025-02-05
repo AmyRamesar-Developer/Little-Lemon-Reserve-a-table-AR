@@ -1,8 +1,10 @@
 import React from "react"
 
 const AvaiableTimes = () => {
+    const availableTimes = ["17:00", "18:00", "19:00", "19:30"];
+
     return (
-        <h1>This time is not avaiable</h1>
+        availableTimes
     )
 }
 
