@@ -1,22 +1,23 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import './App.css'
 
 const navigation = [
     {
         page: "HOME",
-        url: "#home"
+        url: "/"
     },
     {
         page: "ABOUT",
-        url: "about"
+        url: "/"
     },
     {
         page: "MENU",
-        url: "#menu"
+        url: "/"
     },
     {
         page: "RESERVATIONS",
-        url: "#reservations"
+        url: "/bookingpage"
     },
     {
         page: "ORDER ONLINE",
@@ -37,7 +38,7 @@ const Header = () => {
             <ul className="nav-list">
                 {navigation.map((nav) =>(
                     <li className="nav-listitem">
-                        <a href={nav.url}>{nav.page}</a>
+                        <Link to={nav.url}>{nav.page}</Link>
                     </li>
                 ))
                 }
