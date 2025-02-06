@@ -32,10 +32,11 @@ const BookingForm = () => {
           })}
     >
         {({errors, touched}) => (
-            <Form>
+            <Form className="booking-form">
                 <div>
                     <label htmlFor="firstName">First Name</label>
                     <Field
+                      className="booking-input"
                       id="firstName"
                       name="firstName"
                       type="text"
@@ -48,6 +49,7 @@ const BookingForm = () => {
                 <div>
                     <label htmlFor="lastName">Last Name</label>
                     <Field
+                      className="booking-input"
                       id="lastName"
                       name="lastName"
                       type="text"
@@ -60,6 +62,7 @@ const BookingForm = () => {
                 <div>
                     <label htmlFor="numberOfGuests">Number of Guests</label>
                     <Field
+                      className="booking-input"
                       id="numberOfGuests"
                       name="numberOfGuests"
                       type="number"
@@ -72,18 +75,20 @@ const BookingForm = () => {
                 <div>
                     <label htmlFor="date">Date</label>
                     <Field
+                      className="booking-input"
                       id="date"
                       name="date"
                       type="date"
                       placeholder="Date"
                     />
-                   {/* <ErrorMessage name="date">
+                    <ErrorMessage name="date">
                         {(msg) => <div className="error">{msg}</div>}
-                    </ErrorMessage> */}
+                    </ErrorMessage>
                 </div>
                 <div>
                     <label htmlFor="time">Time</label>
                     <Field
+                      className="booking-input"
                       as="select"
                       id="time"
                       name="time"
@@ -101,9 +106,11 @@ const BookingForm = () => {
                 <div>
                     <label htmlFor="occassion">Occassion</label>
                     <Field
+                      className="booking-input"
                       as="select"
                       id="occassion"
                       name="occassion"
+                      placeholder="Select an option"
                     >
                     <option>Select an occassion</option>
                     <option>Birthday</option>
@@ -117,6 +124,7 @@ const BookingForm = () => {
                 <div>
                     <label htmlFor="notes">Notes or special requests</label>
                     <Field
+                      className="booking-input"
                       id="notes"
                       name="notes"
                       type="text"
@@ -126,6 +134,7 @@ const BookingForm = () => {
                 <div>
                     <label htmlFor="contactNumber">Contact Number</label>
                     <Field
+                      className="booking-input"
                       id="contactNumber"
                       name="contactNumber"
                       type="number"
@@ -138,6 +147,7 @@ const BookingForm = () => {
                 <div>
                     <label htmlFor="email">Email</label>
                     <Field
+                      className="booking-input"
                       id="email"
                       name="email"
                       type="email"
