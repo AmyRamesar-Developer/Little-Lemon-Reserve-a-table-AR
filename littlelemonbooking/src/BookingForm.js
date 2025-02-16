@@ -1,18 +1,14 @@
 import {React, useState} from "react";
 import {Formik, Field, Form, ErrorMessage} from "formik";
 import * as Yup from "yup";
-import AvailableTimes from "./AvailableTimes";
 import "./App.css"
 
-const BookingForm = () => {
-
-    const times = AvailableTimes();
-
+const BookingForm = ({availableTimes =[], selectedDate, updateTimes, dispatch}) => {
     const [formState, setFormState] = useState({
       firstName: "",
             lastName: "",
             numberOfGuests: "",
-            date: "",
+            date: selectedDate,
             time: "",
             notes:"",
             contactNumber: "",
@@ -28,8 +24,15 @@ const BookingForm = () => {
       setFieldValue(name, e.target.value)
     };
 
+    const handleDateChange = (e, setFieldValue) => {
+      const newDate= e.target.value;
+      dispatch({type: 'setDate', payload: newDate });
+      setFieldValue(e.target.value);
+      updateTimes(newDate);
+    };
+
     const handleSumbit = (values) => {
-      console.log('Form submitte with values: ', values);
+      console.log('Form submitted with values: ', values);
     }
 
     return (
@@ -100,7 +103,7 @@ const BookingForm = () => {
                       name="date"
                       type="date"
                       value={formState.date}
-                      onChange={(e) => handleFieldChange(e, setFieldValue)}
+                      onChange={(e) => handleDateChange(e, setFieldValue)}
                     />
                     <ErrorMessage name="date">
                         {(msg) => <div className="error">{msg}</div>}
@@ -117,7 +120,7 @@ const BookingForm = () => {
                       onChange={(e) => handleFieldChange(e, setFieldValue)}
                     >
                     <option>Select a time</option>
-                    {times.map((time) => (
+                    {availableTimes.map((time) => (
                         <option>{time}</option>
                     ))}
 
