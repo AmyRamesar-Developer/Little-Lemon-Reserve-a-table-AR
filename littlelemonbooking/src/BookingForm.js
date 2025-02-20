@@ -11,7 +11,6 @@ const BookingForm = ({availableTimes =[], selectedDate, updateTimes, dispatch}) 
             date: selectedDate,
             time: "",
             notes:"",
-            contactNumber: "",
             email: "",
     });
 
@@ -25,10 +24,11 @@ const BookingForm = ({availableTimes =[], selectedDate, updateTimes, dispatch}) 
     };
 
     const handleDateChange = (e, setFieldValue) => {
-      const newDate= e.target.value;
-      dispatch({type: 'setDate', payload: newDate });
-      setFieldValue(e.target.value);
-      updateTimes(newDate);
+      const {name, value}= e.target;
+      dispatch({type: 'setDate', payload: value });
+      setFieldValue(name, e.target.value);
+      updateTimes(value);
+      console.log(value, " Date return");
     };
 
     const handleSumbit = (values) => {
@@ -45,6 +45,8 @@ const BookingForm = ({availableTimes =[], selectedDate, updateTimes, dispatch}) 
             firstName: Yup.string().required("Please enter your first name").min(2, "First name should be at least 2 characters long"),
             lastName: Yup.string().required("Please enter your last name").min(2, "Last name should be at least 2 characters long"),
             numberOfGuests: Yup.number().required("Please enter number of guests").min(1, "One person minimum").max(12, "12 persons max"),
+            date: Yup.date().required("Please select a date").typeError("Invalid Date").min(new Date(), "Date cannot be in the past"),
+            time: Yup.string().required("Please select a time"),
             email: Yup.string().email("Invalid email").required("Enter email"),
           })}
     >
@@ -145,9 +147,6 @@ const BookingForm = ({availableTimes =[], selectedDate, updateTimes, dispatch}) 
                     <option>Anniversary</option>
 
                     </Field>
-                    <ErrorMessage name="time">
-                        {(msg) => <div className="error">{msg}</div>}
-                    </ErrorMessage>
                 </div>
                 <div>
                     <label htmlFor="notes">Notes or special requests</label>
@@ -160,21 +159,6 @@ const BookingForm = ({availableTimes =[], selectedDate, updateTimes, dispatch}) 
                       onChange={(e) => handleFieldChange(e, setFieldValue)}
                       placeholder=""
                     />
-                </div>
-                <div>
-                    <label htmlFor="contactNumber">Contact Number</label>
-                    <Field
-                      className="booking-input"
-                      id="contactNumber"
-                      name="contactNumber"
-                      type="number"
-                      value={formState.contactNumber}
-                      onChange={(e) => handleFieldChange(e, setFieldValue)}
-                      placeholder="Contact Number"
-                    />
-                    <ErrorMessage name="contactNumber">
-                        {(msg) => <div className="error">{msg}</div>}
-                    </ErrorMessage>
                 </div>
                 <div>
                     <label htmlFor="email">Email</label>
@@ -191,7 +175,7 @@ const BookingForm = ({availableTimes =[], selectedDate, updateTimes, dispatch}) 
                         {(msg) => <div className="error">{msg}</div>}
                     </ErrorMessage>
                 </div>
-                <button type="submit">Submit</button>
+                <button type="submit">Confirm Booking</button>
             </Form>
         )}
     </Formik>

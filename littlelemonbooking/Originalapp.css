@@ -1,0 +1,324 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+  
+  @media ( max-width: 768px ){
+    .grid-container {
+    grid-template-columns: repeat(6, 1fr);
+    }
+  }
+  
+  @media (max-width: 468px ){
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .header-item {
+    display: flex;
+    grid-column: span 12;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 115px;
+  }
+  
+  
+                                            .nav-bar {
+                                                grid-column: span 6;
+                                            }
+  
+  .nav-list {
+    display: flex;
+    list-style-type: none;
+                                                margin: 0;
+                                                padding: 0;
+  }
+  
+  .nav-listitem {
+    font-family: 'Karla';
+    margin-left: 20px;
+  }
+  
+  .nav-listitem a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 400;
+  }
+  
+  .nav-listitem a:hover {
+    color:#F4CE14;
+  }
+  
+  .hero-item {
+    grid-column: span 12;
+    display: flex;
+    min-height: 400px;
+    background-color: #495E57;
+    padding-left: 4%;
+    padding-top: 3%;
+  }
+  
+  .hero-item article {
+    flex: 1;
+    max-width: 50%;
+  }
+  
+  .hero-item h1 {
+    grid-area: "h1";
+    font-family: 'Markazi Text';
+    font-weight: 500;
+    font-size: 64pt;
+    color: #F4CE14;
+  }
+  
+  .hero-item h2 {
+    font-family: 'Markazi Text';
+    font-size: 40pt;
+    font-weight: 400;
+    color: #EDEFEE;
+  }
+  
+  .hero-item p {
+    font-family: "Karla";
+    font-size: 18pt;
+    font-weight: 400;
+    color: #000000;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-item img {
+    flex: 0 1 40%;
+    padding: 3% 3% 3% 3%;
+  }
+  
+  .specials-section {
+    grid-column: span 12;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 3rem;
+  }
+  
+  .specials-section h2{
+    font-family: 'Karla';
+    font-size: 20pt;
+    font-weight: 800;
+    color: #000000;
+    text-transform: uppercase;
+    min-width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+  
+  .special-card {
+    display: grid;
+    grid-template-areas:
+    "img img img"
+    "dish dish price"
+    "des des des";
+    max-width: 25%;
+    gap: 40px;
+    margin: auto;
+                                                        grid-template-columns: 1fr 1fr 1fr;
+                                                        grid-template-rows: auto;
+  }
+  
+  .special-card h3 {
+    font-family: 'Karla';
+    font-weight: bold;
+    font-size: 18pt;
+  }
+  
+  .special-card img {
+    grid-area: img;
+  }
+  
+  .special-card title {
+    grid-area: dish;
+    color: #000000;
+  }
+  
+  .cost {
+    grid-area: price;
+    color: #495E57;
+  }
+  
+  .special-card p {
+    grid-area: des;
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 16pt;
+  }
+  
+  .testimonals {
+    grid-column: span 12;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 3rem;
+  }
+  
+  .testimonals h2 {
+    font-family: 'Karla';
+    font-size: 20pt;
+    font-weight: 800;
+    color: #000000;
+    text-transform: uppercase;
+    min-width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+  .testimonal-card {
+    display: grid;
+    grid-template-areas:
+    "rating rating rating"
+    "ava ava name"
+    "comment comment comment";
+    max-width: 30%;
+    gap: 20px;
+    margin: 15px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  
+  .testimonal-card h3 {
+    font-family: 'Karla';
+    font-weight: bold;
+    font-size: 18pt;
+  }
+  
+  .reviewerImg {
+    grid-area: ava;
+  }
+  
+  .reviewer {
+    grid-area: name;
+    color: #000000;
+  }
+  
+  .rating {
+    grid-area: rating;
+    color: #000000;
+  }
+  
+  .review{
+    grid-area: comment;
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 16pt;
+  }
+  
+  .about {
+    grid-column: span 12;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 3rem;
+  }
+  
+  .about h1 {
+    font-family: 'Karla';
+    font-size: 64pt;
+    font-weight: 500;
+    color: #000000;
+    min-width: 100%;
+    text-align: center;
+  }
+  
+  .about p {
+    font-family: 'Karla';
+    font-weight: 400;
+    font-size: 16pt;
+  }
+  
+  
+  .footer-item {
+    grid-column: span 12;
+    display: flex;
+    gap: 50px;
+    padding-top: 3rem;
+  }
+  
+  .form-heading {
+    grid-column: span 12;
+    text-align: center;
+    font-family: "Karla";
+    color: #000000;
+    font-weight: 500;
+    font-size: 64pt;
+    padding-top: 2rem;
+    margin-bottom: 0%;
+  }
+  
+  .form-greeting {
+    grid-column: span 12;
+    text-align: center;
+    font-family: "Karla";
+    font-size: 12pt;
+    font-weight: 400;
+    color: #495E57;
+    padding-top: 0%;
+    margin-top: 0%;
+  }
+  
+  Form {
+    grid-column: span 12;
+    min-width: 100%;
+    padding: 2% 30% 2% 30%;
+  }
+  
+  .booking-form div {
+    padding: 2%;
+    padding-bottom: 2rem;
+    min-width: 30%;
+    min-height: 5%;
+    justify-items: left;
+    font-family: "Karla";
+    font-weight: 400;
+    font-size: 16pt;
+  }
+  
+  .booking-form label {
+    display: inline-block;
+    min-width: 100%;
+  }
+  
+  .booking-input {
+    display: inline-block;
+    min-height: 2rem;
+    min-width: 85%;
+    border-radius: 8px;
+    margin-top: .5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+  
+  .booking-form .error {
+    color: #e74c3c;
+    font-family: "Karla";
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    padding-left: 0.5rem;
+  }
+  
+  button {
+    min-width: 30%;
+    height: 3rem;
+    background-color: #F4CE14;
+    text-align: center;
+    justify-self: center;
+    border-radius: 10px;
+    margin-right: 35%;
+    margin-left: 35%;
+    font-family: "Karla";
+    font-size: 16pt;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 1% 5% 1% 5%;
+  }
+  
+  
+  

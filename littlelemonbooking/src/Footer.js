@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <section className="footer-item">
            <article>
-                <h2>Image Insert</h2>
+                <img src='./images/logo.png' alt="Little Lemon Logo" />
            </article>
            <article>
                 <h2>Doormat Navigation</h2>

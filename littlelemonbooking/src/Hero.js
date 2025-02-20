@@ -18,7 +18,7 @@ const Hero = () => {
                 <button>Book a table</button>
                 </Link>
             </article>
-            <img src="../chefb.jpg" alt="A chef preparing a meal" width="200px" height="250px"></img>
+            <img src="./images/chefb.jpg" alt="A chef preparing a meal" width="200px" height="250px"></img>
         </section>
     )
 }

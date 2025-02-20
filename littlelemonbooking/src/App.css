@@ -26,16 +26,9 @@
   min-height: 115px;
 }
 
-
-.nav-bar {
-  grid-column: span 6;
-}
-
 .nav-list {
   display: flex;
   list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-listitem {
@@ -87,12 +80,29 @@
   font-size: 18pt;
   font-weight: 400;
   color: #000000;
+  margin-bottom: 2rem;
 }
 
 .hero-item img {
   flex: 0 1 40%;
-  padding-right: 3%;
-  padding-left: 10%;
+  padding: 3% 0% 6% 10%;
+  min-height: 100%;
+  margin-right: 0%;
+}
+
+button {
+  min-width: 30%;
+  height: 3rem;
+  background-color: #F4CE14;
+  text-align: center;
+  border-radius: 10px;
+  margin-right: 35%;
+  margin-left: 35%;
+  font-family: "Karla";
+  font-size: 16pt;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 1% 5% 1% 5%;
 }
 
 .specials-section {
@@ -113,18 +123,19 @@
   padding-bottom: 20px;
 }
 
-
 .special-card {
   display: grid;
   grid-template-areas:
   "img img img"
   "dish dish price"
   "des des des";
-  max-width: 25%;
-  gap: 40px;
+  max-width: 30%;
+  gap: 3%;
   margin: auto;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  padding: 2rem 1rem 2rem 1rem;
+  background-color: #f5ecc0;
+  min-height: 450px;
+  border-radius: 20px;
 }
 
 .special-card h3 {
@@ -135,6 +146,11 @@
 
 .special-card img {
   grid-area: img;
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .special-card title {
@@ -151,7 +167,8 @@
   grid-area: des;
   font-family: 'Karla';
   font-weight: 400;
-  font-size: 16pt;
+  font-size: 13pt;
+  padding-top: 1rem;
 }
 
 .testimonals {
@@ -212,97 +229,22 @@
   font-size: 16pt;
 }
 
-.about {
-  grid-column: span 12;
-  display: flex;
-  flex-wrap: wrap;
-  padding-top: 3rem;
-}
-
-.about h1 {
-  font-family: 'Karla';
-  font-size: 64pt;
-  font-weight: 500;
-  color: #000000;
-  min-width: 100%;
-  text-align: center;
-}
-
-.about p {
-  font-family: 'Karla';
-  font-weight: 400;
-  font-size: 16pt;
-}
-
-
 .footer-item {
   grid-column: span 12;
   display: flex;
   gap: 50px;
-  padding-top: 3rem;
+  padding: 1rem 3rem 1rem 3rem;
+  background-color: #495E57;
 }
 
-.form-heading {
-  grid-column: span 12;
-  text-align: center;
-  font-family: "Karla";
-  color: #000000;
-  font-weight: 500;
-  font-size: 64pt;
-  padding-top: 2rem;
-  margin-bottom: 0%;
+.footer-item article img {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
-.form-greeting {
-  grid-column: span 12;
-  text-align: center;
-  font-family: "Karla";
-  font-size: 12pt;
-  font-weight: 400;
-  color: #495E57;
-  padding-top: 0%;
-  margin-top: 0%;
-}
-
-Form {
-  grid-column: span 12;
-  min-width: 100%;
-  padding: 2% 30% 2% 30%;
-}
-
-.booking-form div {
-  padding: 2%;
-  padding-bottom: 2rem;
-  min-width: 30%;
-  min-height: 5%;
-  justify-items: left;
-  font-family: "Karla";
-  font-weight: 400;
-  font-size: 16pt;
-}
-
-.booking-form label {
-  display: inline-block;
-  min-width: 100%;
-}
-
-.booking-input {
-  display: inline-block;
-  min-height: 2rem;
-  min-width: 85%;
-  border-radius: 8px;
-  margin-top: .5rem;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-}
-
-.error {
-  color: red;
-  font-family: "Karla";
-  font-size: 12pt;
-}
-
-.booking-input ~ .error {
-  min-width: 85%;
-  border-color: red !important;
+.footer-item article{
+  color: #EDEFEE;
 }
