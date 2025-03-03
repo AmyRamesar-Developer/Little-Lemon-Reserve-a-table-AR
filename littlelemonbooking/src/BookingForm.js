@@ -26,9 +26,12 @@ const BookingForm = ({availableTimes =[], selectedDate, updateTimes, dispatch}) 
     const handleDateChange = (e, setFieldValue) => {
       const {name, value}= e.target;
       dispatch({type: 'setDate', payload: value });
+      setFormState((prevState) => ({
+        ...prevState,
+        [name]:value,
+      }));
       setFieldValue(name, e.target.value);
       updateTimes(value);
-      console.log(value, " Date return");
     };
 
     const handleSumbit = (values) => {

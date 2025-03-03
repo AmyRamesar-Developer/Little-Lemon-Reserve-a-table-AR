@@ -234,7 +234,6 @@ button {
   font-weight: bold;
   font-size: .8rem;
   margin-right: 1rem;
-  margin-left: 1rem;
   margin-top: .9rem;
 }
 
@@ -328,8 +327,80 @@ button {
   color: #333333;
 }
 
-.footer-item ul li {
-  text-decoration: none;
-  list-style-type: none;
+.footer-item .nav-list {
+  display: block;
+  text-align: left;
+}
+
+.form-heading {
+  grid-column: span 12;
+  text-align: center;
+  font-family: "Karla";
+  color: #000000;
+  font-weight: 500;
+  font-size: 64pt;
+  margin-bottom: 0%;
+}
+
+.form-greeting {
+  grid-column: span 12;
+  text-align: center;
+  font-family: "Karla";
+  font-size: 12pt;
   font-weight: 400;
+  color: #495E57;
+  padding-bottom: 1rem;
+  margin-top: 0%;
+}
+
+Form {
+  grid-column: span 12;
+  max-width: 50%;
+  padding:5% 5% 5% 5%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 16px;
+  border-color: #495E57;
+  border-style: solid;
+}
+
+.booking-form div {
+  padding-bottom: 2rem;
+  min-width: 30%;
+  min-height: 5%;
+  font-family: "Karla";
+  font-weight: 400;
+  font-size: 16pt;
+  justify-self: left;
+}
+
+.booking-form label {
+  display: inline-block;
+  min-width: 100%;
+}
+
+.booking-input {
+  display: inline-block;
+  min-height: 2rem;
+  min-width: 85%;
+  border-radius: 8px;
+  margin-top: .5rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.booking-form .error {
+  color: #e74c3c;
+  font-family: "Karla";
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  padding-left: 0.5rem;
+}
+
+.booking-form button {
+  display: inline-block;
+  justify-self: center;
+  margin-left: 25%;
+  margin-right: auto;
+  margin-top: 1.5rem;
 }
