@@ -6,7 +6,8 @@ const About = () => {
     return(
         <section className="about">
             <article>
-                <h1>Meet the owners</h1>
+                <h1>Little Lemon</h1>
+                <h3>Chicago</h3>
                 <p> {aboutUs}</p>
             </article>
             <img src="./images/owners.jpg" alt="Mario and Adrian, co-owners of Little Lemon" ></img>

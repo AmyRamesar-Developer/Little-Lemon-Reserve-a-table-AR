@@ -7,30 +7,30 @@ const Footer = () => {
                 <img src='./images/logo.png' alt="Little Lemon Logo" />
            </article>
            <article>
-                <h2>Doormat Navigation</h2>
+                <h2>Little Lemon</h2>
                 <nav>
                     <ul>
                         <li>Home</li>
-                        <li>ABOUT</li>
-                        <li>MENU</li>
-                        <li>RESERVATIONS</li>
-                        <li>ORDER ONLINE</li>
-                        <li>LOGIN</li>
+                        <li>About</li>
+                        <li>Menu</li>
+                        <li>Reservations</li>
+                        <li>Order online</li>
+                        <li>Login</li>
                     </ul>
                 </nav>
            </article>
            <article>
-           <h2>Contact</h2>
+           <h2>Contact Us</h2>
                 <nav>
                     <ul>
                         <li>Phone Number</li>
                         <li>Email</li>
-                        <li>address</li>
+                        <li>Address</li>
                     </ul>
                 </nav>
            </article>
            <article>
-           <h2>Social Media Links</h2>
+           <h2>Social Media</h2>
                 <nav>
                     <ul>
                         <li>Meta</li>

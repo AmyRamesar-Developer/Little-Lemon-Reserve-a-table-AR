@@ -177,6 +177,7 @@ button {
 .testimonals {
   grid-column: span 12;
   padding-top: 3rem;
+  margin-bottom: 2rem;
 }
 
 .testimonals h2 {
@@ -261,21 +262,25 @@ button {
 .about {
   grid-column: span 12;
   display: flex;
-  flex-wrap: wrap;
   padding-top: 3rem;
   padding-bottom: 2rem;
   font-family: 'Karla';
   width: 100%;
-  text-align: center;
-  justify-content: center;
   border-radius: 10px;
+  background-color:#495E57;
 }
 
 .about h1 {
+  min-width: 100%;
   font-size: 64pt;
   font-weight: 500;
-  color: #333333;
-  min-width: 100%;
+  color: #F4CE14;
+  margin-left: 3rem;
+}
+
+.about h3 {
+  color: #EDEFEE;
+  margin-left: 3.5rem;
 }
 
 .about p {
@@ -283,32 +288,48 @@ button {
   font-weight: 400;
   font-size: 16pt;
   text-align: left;
-  margin: 1rem 2rem 1rem 2rem;
+  margin: 1rem 2rem 1rem 4rem;
+  color: #bdd2cc;
 }
 
 .about img {
-  width: 100%;
+  max-width: 40%;
   max-width: 500px;
   object-fit: cover;
-  padding-top: 2rem;
+  margin-right: 2rem;
 }
 
 .footer-item {
   grid-column: span 12;
   display: flex;
-  gap: 50px;
-  padding: 1rem 3rem 1rem 3rem;
+  gap: 10%;
+  padding: 3rem 3rem 1rem 3rem;
+  font-family: 'Karla';
+}
+
+.footer-item h2 {
+  padding: 1rem 1rem 1rem 0rem;
+  text-transform: uppercase;
+  color: #000000;
+  text-align: left;
 }
 
 .footer-item article img {
   width: 100%;
-  max-width: 300px;
-  height: 200px;
+  max-width: 250px;
+  height: 150px;
   padding-right: 2rem;
   object-fit: cover;
   border-radius: 10px;
+  align-self: center;
 }
 
 .footer-item article{
   color: #333333;
+}
+
+.footer-item ul li {
+  text-decoration: none;
+  list-style-type: none;
+  font-weight: 400;
 }
