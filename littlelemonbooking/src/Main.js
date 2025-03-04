@@ -4,22 +4,26 @@ import Homepage from "./Homepage"
 import BookingPage from "./BookingPage"
 import './App.css'
 
-
 const initialState = {
+  selectedDate: "",
+  availableTimes: [],
+}
+
+const initializeTimes = () => {
+  return {
     selectedDate: "",
-    availableTimes: ['12:00pm', '12:30pm', '5:00pm', '5:30pm', '6:00pm', '6:30pm', '7:00pm', '7:30pm', "8:00pm", '8:30pm', '9:00pm',],
-};
+    availableTimes: ['12:00pm', '12:30pm', '5:00pm', '5:30pm', '6:00pm', '6:30pm', '7:00pm', '7:30pm', "8:00pm", '8:30pm', '9:00pm']
+  };
+}
 
 function bookingReducer (state, action) {
-    if(action.type === 'setDate') return {...state, selecteDate: action.payload };
     if(action.type === 'setAvailableTimes') return {...state, availableTimes: action.payload };
     else return state;
 }
 const Main = () => {
-    const [state, dispatch] = useReducer (bookingReducer, initialState);
+    const [state, dispatch] = useReducer (bookingReducer, initialState, initializeTimes);
 
     const updateTimes = (selectedDate) => {
-      console.log(selectedDate);
         dispatch ({
             type: 'setAvailableTimes',
             payload: ['12:00pm', '5:00pm', "9:44pm"],

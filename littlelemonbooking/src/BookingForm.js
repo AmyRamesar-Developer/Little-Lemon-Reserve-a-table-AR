@@ -3,7 +3,7 @@ import {Formik, Field, Form, ErrorMessage} from "formik";
 import * as Yup from "yup";
 import "./App.css"
 
-const BookingForm = ({availableTimes =[], selectedDate, updateTimes, dispatch}) => {
+const BookingForm = ({availableTimes=[], selectedDate, updateTimes, dispatch}) => {
     const [formState, setFormState] = useState({
       firstName: "",
             lastName: "",
