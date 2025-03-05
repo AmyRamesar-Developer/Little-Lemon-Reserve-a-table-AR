@@ -3,14 +3,15 @@ import {Formik, Field, Form, ErrorMessage} from "formik";
 import * as Yup from "yup";
 import "../App.css"
 
-const BookingForm = ({availableTimes=[], selectedDate, updateTimes, dispatch}) => {
+const BookingForm = ({availableTimes=[], selectedDate, updateTimes, dispatch, submitForm, onSubmit}) => {
 
     const [formState, setFormState] = useState({
-      firstName: "",
+            firstName: "",
             lastName: "",
             numberOfGuests: "",
-            date: selectedDate,
+            date: selectedDate || "",
             time: "",
+            occassion: "",
             notes:"",
             email: "",
     });
@@ -36,15 +37,13 @@ const BookingForm = ({availableTimes=[], selectedDate, updateTimes, dispatch}) =
       updateTimes(selectedDate);
     };
 
-    const handleSumbit = (values) => {
-      console.log('Form submitted with values: ', values);
-    }
-
     return (
         <Formik
           initialValues={formState}
 
-          onSubmit={handleSumbit}
+          onSubmit={async (values) => {
+            await onSubmit(values);
+          }}
 
           validationSchema={ Yup.object({
             firstName: Yup.string().required("Please enter your first name").min(2, "First name should be at least 2 characters long"),

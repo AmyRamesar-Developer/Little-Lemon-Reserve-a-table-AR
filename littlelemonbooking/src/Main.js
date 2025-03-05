@@ -2,7 +2,8 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
 import {React, useReducer, useEffect} from "react"
 import Homepage from "./components/Homepage"
 import BookingPage from "./components/BookingPage"
-import {fetchAPI} from "./Api.js"
+import ConfirmedBooking from "./components/ConfirmedBooking"
+import {fetchAPI, submitAPI} from "./Api.js"
 import './App.css'
 
 const initialState = {
@@ -25,7 +26,6 @@ function bookingReducer (state, action) {
 }
 const Main = () => {
     const [state, dispatch] = useReducer (bookingReducer, initialState, initializeTimes);
-
     useEffect(() =>{
       const fetchInitialTimes = async () => {
         const today = new Date();
@@ -62,12 +62,12 @@ const Main = () => {
         payload: selectedDate,
       });
     };
-    /**const updateTimes = (selectedDate) => {
-        dispatch ({
-            type: 'setAvailableTimes',
-            payload: ['12:00pm', '5:00pm', "9:44pm"],
-        });
-    }; */
+
+    const submitForm = async (formState) => {
+      const isSubmitted = await submitAPI(formState);
+      return isSubmitted;
+    };
+
 
     return (
         <Router>
@@ -79,8 +79,10 @@ const Main = () => {
                             updateTimes={updateTimes}
                             selecteDate={state.selectedDate}
                             dispatch={dispatch}
+                            submitForm={submitForm}
                             />}
             />
+            <Route path= "/confirmation" element = {<ConfirmedBooking />} />
           </Routes>
         </Router>
     );
