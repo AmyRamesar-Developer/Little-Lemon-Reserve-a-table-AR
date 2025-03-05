@@ -1,6 +1,6 @@
 import React from "react"
 import Testimonal from "./Testimonal"
-import './App.css'
+import '../App.css'
 
 const testimonals = [
     {

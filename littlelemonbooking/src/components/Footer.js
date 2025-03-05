@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom"
-import './App.css'
+import '../App.css'
 
 const navigation = [{page: "Home", url: "/"}, {page:"About", url: "/"}, {page: "Menu", url: "/"}, {page: "Reservations", url: "/bookingpage"}, {page: "Order online", url: "/"}, {page: "Login", url: "/"}];
 const contacts = [{page: "Phone Number", url: "/"}, {page: "Email", url: "/"}, {page: "Address", url: "/"}];

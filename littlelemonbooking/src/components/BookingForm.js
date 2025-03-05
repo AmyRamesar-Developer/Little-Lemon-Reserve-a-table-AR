@@ -1,9 +1,10 @@
 import {React, useState} from "react";
 import {Formik, Field, Form, ErrorMessage} from "formik";
 import * as Yup from "yup";
-import "./App.css"
+import "../App.css"
 
 const BookingForm = ({availableTimes=[], selectedDate, updateTimes, dispatch}) => {
+
     const [formState, setFormState] = useState({
       firstName: "",
             lastName: "",
@@ -25,13 +26,14 @@ const BookingForm = ({availableTimes=[], selectedDate, updateTimes, dispatch}) =
 
     const handleDateChange = (e, setFieldValue) => {
       const {name, value}= e.target;
-      dispatch({type: 'setDate', payload: value });
+      const selectedDate = new Date(value)
+      dispatch({type: 'setDate', payload: selectedDate });
       setFormState((prevState) => ({
         ...prevState,
         [name]:value,
       }));
       setFieldValue(name, e.target.value);
-      updateTimes(value);
+      updateTimes(selectedDate);
     };
 
     const handleSumbit = (values) => {

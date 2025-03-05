@@ -2,7 +2,7 @@ import React from "react"
 import BookingForm from "./BookingForm";
 import Header from "./Header";
 import Footer from "./Footer";
-import "./App.css"
+import "../App.css"
 
 const BookingPage = ({availableTimes, selectedDate, updateTimes, dispatch}) => {
     const formHeading = "Reserve a table";

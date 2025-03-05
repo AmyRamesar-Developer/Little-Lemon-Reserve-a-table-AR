@@ -1,6 +1,6 @@
 import React from "react";
 import Special from "./Special";
-import './App.css';
+import '../App.css';
 
 const specials = [
     {

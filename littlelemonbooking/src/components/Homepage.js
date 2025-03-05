@@ -5,7 +5,7 @@ import SpecialSection from "./SpecialSection.js"
 import Testimonals from "./Testimonals.js"
 import About from "./About.js"
 import Footer from './Footer.js'
-import './App.css'
+import '../App.css'
 
 function Homepage() {
   return (

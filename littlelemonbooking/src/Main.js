@@ -1,35 +1,73 @@
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom"
-import {React, useReducer} from "react"
-import Homepage from "./Homepage"
-import BookingPage from "./BookingPage"
+import {React, useReducer, useEffect} from "react"
+import Homepage from "./components/Homepage"
+import BookingPage from "./components/BookingPage"
+import {fetchAPI} from "./Api.js"
 import './App.css'
 
 const initialState = {
-  selectedDate: "",
+  selectedDate: new Date(),
   availableTimes: [],
 }
 
 const initializeTimes = () => {
+  const inititalDate = new Date();
   return {
-    selectedDate: "",
-    availableTimes: ['12:00pm', '12:30pm', '5:00pm', '5:30pm', '6:00pm', '6:30pm', '7:00pm', '7:30pm', "8:00pm", '8:30pm', '9:00pm']
+    selectedDate: inititalDate,
+    availableTimes: fetchAPI(inititalDate),
   };
 }
 
 function bookingReducer (state, action) {
+    if(action.type === 'setSelectedDate') return {...state, selectedDate: action.payload };
     if(action.type === 'setAvailableTimes') return {...state, availableTimes: action.payload };
     else return state;
 }
 const Main = () => {
     const [state, dispatch] = useReducer (bookingReducer, initialState, initializeTimes);
 
-    const updateTimes = (selectedDate) => {
+    useEffect(() =>{
+      const fetchInitialTimes = async () => {
+        const today = new Date();
+        const times = await fetchAPI(today);
+        dispatch({
+          type: "setAvailableTimes",
+          payload: times || [],
+        });
+        dispatch({
+          type: "setSelectedDate",
+          payload: today,
+        });
+      };
+
+      fetchInitialTimes();
+    }, []);
+
+    useEffect(() => {
+      if (state.selectedDate) {
+        const fetchTimesForSelectedDate = async () => {
+          const times = await fetchAPI(state.selectedDate);
+          dispatch({
+            type: "setAvailableTimes",
+            payload: times || [],
+          });
+        };
+        fetchTimesForSelectedDate();
+      }
+    }, [state.selectedDate]);
+
+    const updateTimes = async (selectedDate) => {
+      dispatch({
+        type: "setSelectedDate",
+        payload: selectedDate,
+      });
+    };
+    /**const updateTimes = (selectedDate) => {
         dispatch ({
             type: 'setAvailableTimes',
             payload: ['12:00pm', '5:00pm', "9:44pm"],
         });
-    };
-
+    }; */
 
     return (
         <Router>
