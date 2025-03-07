@@ -149,6 +149,11 @@ const BookingForm = ({availableTimes=[], selectedDate, updateTimes, dispatch, su
                     <option>Select an occassion</option>
                     <option>Birthday</option>
                     <option>Anniversary</option>
+                    <option>Business</option>
+                    <option>Hoilday celebration</option>
+                    <option>Engagment Dinner</option>
+                    <option>Work/Team Lunch</option>
+                    <option>Fundraiser</option>
 
                     </Field>
                 </div>

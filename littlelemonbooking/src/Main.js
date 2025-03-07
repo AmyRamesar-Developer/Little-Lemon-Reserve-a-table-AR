@@ -3,7 +3,8 @@ import {React, useReducer, useEffect} from "react"
 import Homepage from "./components/Homepage"
 import BookingPage from "./components/BookingPage"
 import ConfirmedBooking from "./components/ConfirmedBooking"
-import {fetchAPI, submitAPI} from "./Api.js"
+import Redirect from "./components/Redirect.js"
+import {fetchAPI, submitAPI} from "./BookingAPI.js"
 import './App.css'
 
 const initialState = {
@@ -83,6 +84,7 @@ const Main = () => {
                             />}
             />
             <Route path= "/confirmation" element = {<ConfirmedBooking />} />
+            <Route path= "/underconstruction" element = {<Redirect />} />
           </Routes>
         </Router>
     );

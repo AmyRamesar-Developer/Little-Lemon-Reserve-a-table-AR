@@ -21,6 +21,9 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
 .header-item {
   display: flex;
   grid-column: span 12;
@@ -106,6 +109,11 @@ button {
   font-weight: 500;
   white-space: nowrap;
   padding: 1% 5% 1% 5%;
+}
+
+button:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
 }
 
 .specials-section {
@@ -403,4 +411,73 @@ Form {
   margin-left: 25%;
   margin-right: auto;
   margin-top: 1.5rem;
+}
+
+.confirmed {
+  grid-column: span 12;
+  justify-items: center;
+  font-family: 'Karla';
+  margin-top: 5%;
+}
+
+.confirmed h1{
+  justify-self: center;
+  font-size: 40pt;
+  font-weight: 500;
+  color: #333333;
+  margin: 5%;
+  margin-bottom: 2%;
+}
+
+.confirmed p{
+  justify-self: center;
+  margin-bottom: 5%;
+  color: #333333;
+  font-size: 20pt;
+  font-weight: 400;
+}
+
+.fa-icon {
+  min-height: 150px;
+  min-width: 150px;
+  color: #495E57;
+  grid-area: icon;
+}
+
+.conB {
+  align-self: center;
+  justify-items: center;
+  margin-left: -5%;
+}
+
+.redirect {
+  grid-column: span 12;
+  display: grid;
+  grid-template-areas:
+  "icon icon icon"
+  "pa pa pa"
+  "but but but";
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  font-family: 'Karla';
+  margin-top: 5%;
+}
+
+.redirect p {
+  grid-area: pa;
+  justify-self: center;
+  margin-bottom: 5%;
+  color: #333333;
+  font-size: 20pt;
+  font-weight: 400;
+  margin:5%;
+}
+
+.r-But{
+  grid-area: but;
+  display: flex;
+  gap: 50px;
+  justify-items: center;
+  margin-left: -3%;
 }

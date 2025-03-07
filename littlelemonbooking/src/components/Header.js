@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import '../App.css'
 
 const navigation = [
@@ -13,7 +13,7 @@ const navigation = [
     },
     {
         page: "MENU",
-        url: "/"
+        url: "/underconstruction"
     },
     {
         page: "RESERVATIONS",
@@ -21,16 +21,17 @@ const navigation = [
     },
     {
         page: "ORDER ONLINE",
-        url: "#orderOnline"
+        url: "/underconstruction"
     },
     {
         page: "LOGIN",
-        url: "login"
+        url: "/underconstruction"
     },
 
 ]
 
 const Header = () => {
+
     return (
         <header className="header-item">
             <img src="./Logo.svg" alt="Little Lemon Logo" required></img>

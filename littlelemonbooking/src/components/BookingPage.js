@@ -14,11 +14,9 @@ const BookingPage = ({availableTimes, selectedDate, updateTimes, dispatch, submi
         const isSubmitted = await submitForm(formState);
         if (isSubmitted) {
           navigate("/confirmation");
-          console.log("submission succss!!");
-        } else {
-          console.error("Submission failed!");
-        }
-      };
+        } };
+
+
     return (
         <main className="grid-container">
             <Header />
